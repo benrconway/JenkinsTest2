@@ -26,11 +26,11 @@ describe('API functionality test', () => {
   describe('testing /api GET route', () => {
       it('it should GET appropriate information', (done) => {
         chai.request(server)
-            .get('/')
+            .get('/api')
             .end((error, response) => {
                 response.should.have.status(200);
                 response.body.should.be.a('object');
-                response.body.should.be.eql({message: "Nothing to see here"});
+                response.body.should.be.eql({name: "John"});
               done();
             });
         });
